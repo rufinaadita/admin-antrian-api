@@ -60,4 +60,19 @@ class UserController extends Controller
     {
         return User::all();
     }
+
+    public function show($id)
+    {
+        $data = User::find($id);
+
+        if($data) {
+            return response()->json([
+                'data' => $data
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'gagal'
+        ]);
+    }
 }

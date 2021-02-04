@@ -26,6 +26,7 @@ Route::middleware(VerifyJson::class)->group(function () {
         Route::post('/login', [$controller, 'loginUser']);
         Route::post('/register', [$controller, 'registerUser']);
         Route::get('/', [$controller, 'dataUser']);
+        Route::get('/{id}', [$controller, 'show']);
 
     });
 
